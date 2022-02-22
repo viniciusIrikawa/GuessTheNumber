@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="index.css">
+    <title> Guess The Number </title>
+</head>
+<body>
+    <main>
+        <div class="wrapper">
+            <h1> QUAL É O NÚMERO? </h1>
+            <span></span>
+            <p class="result"></p>
+            <div class="wrapper-numbers">
+                <div class="component c1">
+                    <div class="segment shapeA"></div>
+                    <div class="segment shapeB"></div>
+                    <div class="segment shapeC"></div>
+                    <div class="segment shapeD"></div>
+                    <div class="segment shapeE"></div>
+                    <div class="segment shapeF"></div>
+                    <div class="segment shapeG"></div>
+                </div>
+                <div class="component c2">
+                    <div class="segment shapeA"></div>
+                    <div class="segment shapeB"></div>
+                    <div class="segment shapeC"></div>
+                    <div class="segment shapeD"></div>
+                    <div class="segment shapeE"></div>
+                    <div class="segment shapeF"></div>
+                    <div class="segment shapeG"></div>
+                </div>
+                <div class="component c3">
+                    <div class="segment shapeA"></div>
+                    <div class="segment shapeB"></div>
+                    <div class="segment shapeC"></div>
+                    <div class="segment shapeD"></div>
+                    <div class="segment shapeE"></div>
+                    <div class="segment shapeF"></div>
+                    <div class="segment shapeG"></div>
+                </div>
+            </div>
+            <button class="btn-reload"><i class="fa-solid fa-arrow-rotate-right"></i>  NOVA PARTIDA</button>
+            <div class="wrapper-input">
+                <input type="text" value="" onkeyup="removeSimbols(this)" class="input-bar" id="input-number" min='1' max="300" placeholder="Digite o palpite" maxlength="3" required>
+                <button id="btn-send" class="btn-send" type="submit"> ENVIAR </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="scripts/scripts.js"></script>
+</body>
+</html>
