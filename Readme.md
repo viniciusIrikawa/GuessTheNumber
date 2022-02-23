@@ -1,11 +1,11 @@
  Visão Geral 
 
 - A aplicação consiste em adivinhar um número escolhido aleatoriamente pela máquina;
-- A cada inserção de um palpite no campo de input, o número deve ser mostrado no display de 7 LEDS;
+- A cada inserção de um palpite no campo de input, o número deve ser mostrado no display de 7 segmentos;
 - O palpite deve ser comparado com o número escolhido pela máquina;
 - Se o palpite for menor, um aviso é mostrado para o usuário, indicando que a incógnita é maior e vice-versa...
 
-Display de 7 LEDS
+Display de 7 segmentos
 
 - A lógica utilizada para fazer o display foi criar três espaços (divs), que representam cada algarismo;
 - Dentro de cada um desses espaços há 7 divs que representam cada segmento do display;
