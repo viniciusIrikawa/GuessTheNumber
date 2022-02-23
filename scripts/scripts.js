@@ -1,3 +1,4 @@
+// REQUISIÇÃO À API PARA COLETA DE DADOS
 const getData = async () => {
     const response = await fetch('https://us-central1-ss-devops.cloudfunctions.net/rand?min=1&max=300');
     const data = await response.json();
@@ -10,6 +11,7 @@ const getData = async () => {
 }
 getData();
 
+// VERIFICAÇÃO DO DISPARO DO ERRO 502
 const checkStatusCode = (obj) => {
     const result = document.querySelector('.result');
 
@@ -21,6 +23,7 @@ const checkStatusCode = (obj) => {
     }
 }
 
+// EXIBIÇÃO DO CÓDIGO DO ERRO NO DISPLAY DE 7 LEDS
 const displayError = () => {
     getComponents().c2.style.display = 'block'
     getComponents().c3.style.display = 'block'
@@ -48,7 +51,9 @@ const displayError = () => {
     })
 }
 
-
+/* FUNÇÃO GERAL PARA PEGAR AS CÉLULAS E OS SEUS RESPECTIVOS SEGMENTOS
+   EVITAR REPETIÇÕES DE CÓDIGOS
+*/
 const getComponents = () => {
     const c1 = document.querySelector('.c1')
     const c1Childrens = c1.children;
@@ -71,6 +76,9 @@ const getComponents = () => {
     return components;
 }
 
+/* BLOQUEAR O INPUT E O BOTÃO DE ENVIAR
+   FUNÇÃO CHAMADA SEMPRE QUE O NÚMERO FOR ENCONTRADO OU QUANDO HOUVER ERRO 502 
+*/
 const blockInput = () => {
     const btnReload = document.querySelector('.btn-reload');
     const input = document.querySelector('.input-bar')
@@ -101,6 +109,7 @@ const numbersObj = {
     "9": [0,1,2,5,6]
 }
 
+// FUNÇÃO QUE COMPARA O NÚMERO ENVIADO PELA API COM O PALPITE DO USUÁRIO ENVIADO PELO INPUT
 const compare = (obj) => {
     const result = document.querySelector('.result');
 
@@ -139,6 +148,7 @@ const compare = (obj) => {
     }
 }
 
+// RECEBE OS NÚMEROS DO INPUT E CRIA CADA SEGMENTO PARA FORMAR O NÚMERO DIGITADO NO DISPLAY.
 const displayNumber = (obj) => {
 
     const splitObject = obj.inputValue.split('');
@@ -177,6 +187,7 @@ const displayNumber = (obj) => {
     }
 }
 
+// LIMPA O ATUAL NÚMERO QUE ESTÁ VISÍVEL NO DISPLAY
 const resetDisplay = () => {
     const seg = document.getElementsByClassName("segment");
     for (i=0; i < seg.length; i++) {
@@ -184,6 +195,7 @@ const resetDisplay = () => {
       }
 }
 
+// BOTÃO RESPONSÁVEL POR INICIALIZAR A APLICAÇÃO
 const button = document.getElementById('btn-send').addEventListener('click', (e) => {
     e.preventDefault();
     
@@ -196,16 +208,20 @@ const button = document.getElementById('btn-send').addEventListener('click', (e)
     clearInput();
 })
 
+/* OBJETO QUE RECEBE O VALOR DIGITADO NO INPUT, O VALOR E O STATUS DA REQUISIÇÃO
+*/ 
 var obj = {}
 
 // const printObj = (obj) => {
 //     console.log(obj)
 // }
 
+// LIMPA O CAMPO DE TEXTO PARA O PRÓXIMO ENVIO DE PALPITE
 const clearInput = () =>{
     const inputValue = document.getElementById('input-number').value = '';
 }
 
+// BLOQUEA OS CARACTERES ESPECIAIS NO INPUT
 const removeSimbols = (input) => {
     const regex = /[^0-9]/gi;
     input.value = input.value.replace(regex, '');

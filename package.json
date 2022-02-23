@@ -1,0 +1,24 @@
+{
+  "name": "guessthenumber",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:run": "cypress run",
+    "cypress:open": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viniciusIrikawa/GuessTheNumber.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/viniciusIrikawa/GuessTheNumber/issues"
+  },
+  "homepage": "https://github.com/viniciusIrikawa/GuessTheNumber#readme",
+  "devDependencies": {
+    "cypress": "^9.5.0"
+  }
+}
